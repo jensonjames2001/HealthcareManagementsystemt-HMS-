@@ -1,0 +1,14 @@
+runtime: python310  # Specifies Python 3.10 runtime (as 3.12 isn't currently supported)
+
+entrypoint: gunicorn -b :$PORT app:app  # Gunicorn to run Flask app
+
+env_variables:
+  # Optionally, you can set environment variables if needed
+  # Example:
+  # FLASK_APP: "app.py"
+
+handlers:
+  - url: /static
+    static_dir: static  # Serve static files (images, CSS, JS)
+  - url: /.*
+    script: auto  # Handle all other requests with Flask
