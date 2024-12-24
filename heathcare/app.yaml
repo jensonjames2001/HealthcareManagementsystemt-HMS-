@@ -1,0 +1,14 @@
+runtime: python310  # Use Python 3.10
+
+entrypoint: gunicorn -b :$PORT app:app  # Run Flask with Gunicorn
+
+env_variables:
+  # You can define environment variables like API keys here if needed
+  # Example:
+  # FLASK_APP: "app.py"
+
+handlers:
+  - url: /static  # Serve static files (images, CSS, JS)
+    static_dir: static
+  - url: /.*
+    script: auto  # Route all requests to Flask
