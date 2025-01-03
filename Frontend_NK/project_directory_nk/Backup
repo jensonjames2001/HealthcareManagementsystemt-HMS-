@@ -1,0 +1,91 @@
+
+// <!-- JavaScript codes for registration -->
+
+  <script>
+    document.getElementById('register-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  // Gather form data
+  const formData = {
+    firstname: document.getElementById('firstname').value,
+    surname: document.getElementById('surname').value,
+    dob: document.getElementById('dob').value,
+    username: document.getElementById('username').value,
+    email: document.getElementById('email').value,
+    password: document.getElementById('password').value, // Keep password as is
+    phone: document.getElementById('phone').value,
+  };
+
+  // Debugging logs
+  console.log('FormData:', formData);
+
+  // Send form data to the backend as JSON
+  fetch('http://localhost:3000/register', {  // Use the correct backend URL
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formData),
+  })
+    .then(response => {
+      console.log('Raw Response:', response);
+      return response.json();
+    })
+    .then(data => {
+      console.log('Parsed Data:', data);
+      document.getElementById('response-message').textContent = data.message;
+      document.getElementById('response-message').style.color = data.success ? 'green' : 'red';
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('response-message').textContent = 'An error occurred. Please try again.';
+      document.getElementById('response-message').style.color = 'red';
+    });
+});
+</script>
+
+{/* JavaScript code for login */}
+
+
+
+<script>
+document.querySelector('.login-form').addEventListener('submit', function (e) {
+  e.preventDefault(); // Prevent the form from refreshing the page
+
+  // Get the form data
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+
+  // Basic client-side validation
+  const errorMessage = document.getElementById('error-message');
+  if (!username || !password) {
+    errorMessage.textContent = 'Username and password are required.';
+    errorMessage.style.display = 'block';
+    return;
+  }
+
+  // Send data to the server
+  fetch('/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ username, password }),
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        window.location.href = data.redirectUrl || '/dashboard';
+      } else {
+        errorMessage.textContent = data.message || 'Invalid username or password.';
+        errorMessage.style.display = 'block';
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      errorMessage.textContent = 'An error occurred. Please try again.';
+      errorMessage.style.display = 'block';
+    });
+});
+</script>
+
