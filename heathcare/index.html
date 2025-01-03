@@ -24,9 +24,9 @@
                         Services
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                        <li><a href="https://form.jotform.com/232504259003042" class="dropdown-item" href="#">Book an Appointment</a></li>
-                        <li><a href="https://form.jotform.com/232224204562041" class="dropdown-item" href="#">Report a Health Issue</a></li>
-                        <li><a href="https://form.jotform.com/243413344815352" class="dropdown-item" href="#">Repeat a Prescription</a></li>
+                        <li><a href="https://form.jotform.com/232504259003042" class="dropdown-item">Book an Appointment</a></li>
+                        <li><a href="https://form.jotform.com/232224204562041" class="dropdown-item">Report a Health Issue</a></li>
+                        <li><a href="https://form.jotform.com/243413344815352" class="dropdown-item">Repeat a Prescription</a></li>
                     </ul>
                 </div>
 
@@ -78,8 +78,8 @@
                 const transcript = event.results[0][0].transcript;
                 console.log('You said:', transcript); // Log recognized command
 
-                // Send recognized command to backend for processing
-                fetch('http://localhost:5001/voice_assistant_process', {
+                // Update the fetch URL to use your deployed Google Cloud URL
+                fetch('https://healthcare-system2024.nw.r.appspot.com', { 
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ command: transcript })

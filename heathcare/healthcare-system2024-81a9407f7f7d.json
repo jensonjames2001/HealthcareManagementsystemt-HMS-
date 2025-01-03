@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "healthcare-system2024",
+  "private_key_id": "81a9407f7f7d1b43a81e86c40dc05a6ac171013e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCOhPkJmGLDf1lM\nnM53vSGNUTGcJF0WV+pzW/5A7GF00DswmGME+JGjzt+btUbUCsPCVBo0PM+V6Qpb\ng58vTR0wwpImrPB8/a/F86TnFrDOKYL4n6x203V2zQOkTPkUuYooZd0W+j+cBpFy\nh5sdMt6JXJlFOv3mznhTv5O/HDQGrzgqDvh8FLZsKPD9LCKHgQzd++DWMSBJF2KO\nVWvUGldyzrbFKLtPURJ2x5kMqSMpv2JkPomo08IkW3Sz2/NoxRFp5RUrzQSXZFmV\nEB7WRzjYJKkBfuFYW+ZFE8icdxL8SJEuZPBmKly6wzciQE+bgOEMLKXlpJ0iOwve\n769XQkPXAgMBAAECggEAArebTekHXQXVDIZi01qaRKj7Iqh409+6OxfSaad4FjOQ\nJVWKccJReIeNsNjMcGeCIvbahwtvw8JtLaB9TPgR6eeTxMQAU8m8a7BBARzoIw4c\njqPwtFVExI6VFrFXAGOnNCz5AaKkytM/O6lFNlHNd136GB1PUPK3zZT1+qtNfKEc\nTD3AWC2JmzsptqnUo4Q6w8XUvCuyOECa7yYVES43CnlxE8gMpVRf0WdSvAwAlOlr\neJxoWJPfRAtDkw+VK8lu3+XuZpQDsiTXP6Ey09ORyrGFv8So/d9lXAcCjLf5FFbH\nB2Zd2Zj6F77qx/uhZi86MAVheFjHDKtqcxkS3AnAmQKBgQDJi/jO4grn4emcgNP9\nYQeTzwIm7CMgcjGPvC3N2EQzrBW4ioQ0sYGNe2lheMHbhoV5mCK8hkarRTHphm7X\n7qzaCIoAFz9NhcV6kFr86u09VK2jKsDgbYHfRJQH300Ud9gQCgg8CVKRDrDbBHq0\n/PwoxinMb+7rdyXk0hsA91A0OQKBgQC1BlyFm7OYf6QKdNtpnLfnfUjpWBcjmhVr\nnF6vpvUiTaQVpHAxg0Y346zdC+pt3Z4Ep6oZw4ssz7AGPrTe9gbe5+aLtHs4NubO\niAw3Uwr57EzUMqZ9yUYoT5w3N18ZmayP23IQQnLaLFNngfouLBDiohdxINZ/EsKP\niX8m0o3YjwKBgD7hg9QQJDTqf/dLHli8UB/mgxZfsCnsVtgwbt39LnIsq24zEUJb\naz8YFO3LPjhehQBF3fiRsDS5VvQz9Bs8pQM1jNCwcBigttcheLHWHgR3ieERcrHS\nmKVvAPxfx+2t4mRGrQEGK5OEUNtUT3BuScHy6ZGWDqW6O8FjZ/dqMcTJAoGAHPj0\nq+mcl+at4YKMb13GzUTu+3G+2lLZ5Mw1F1XYW/IjNdeIoVQKU/2beBFlJspWdRZE\nkjUKvFRNLuKwXhLwTJK/AlMTeY7H5/w8QEqJMjDQpxGoNe+Vy/PZ47h3/wfqZ2fO\n3K1V5nc7rhBOcz9YQH2C1PdVfScKfqCZ+iOu0h8CgYANlVcDVof4+I3VpdAdk3jB\n/KdizqEkgrdJbRv1iwrI1Kz+KPYGP2LdvmCsn88H8kIwVBuleiqGaxrB1ZcIwPwj\nLr1GI+wOClU8/KqJIA23flGRqtSKJHan+UVxdkcnIbnK9qiqJlOEuqAqc/qlNLVv\nbB+X7Cbs73kyvESb6w4w+g==\n-----END PRIVATE KEY-----\n",
+  "client_email": "text-to-speech@healthcare-system2024.iam.gserviceaccount.com",
+  "client_id": "112615639414571851469",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/text-to-speech%40healthcare-system2024.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

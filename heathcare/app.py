@@ -60,12 +60,14 @@ def home():
 @app.errorhandler(404)
 def page_not_found(e):
     """Handle 404 errors for undefined routes."""
+    print(f"404 Error: {e}")
     return jsonify({"error": "Resource not found"}), 404
 
 
 @app.errorhandler(500)
 def internal_server_error(e):
     """Handle 500 errors for server issues."""
+    print(f"500 Error: {e}")  # Log detailed error
     return jsonify({"error": "Internal server error"}), 500
 
 
