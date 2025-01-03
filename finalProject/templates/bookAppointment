@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en-US" class="supernova isBlack">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1" />
+    <meta name="HandheldFriendly" content="true" />
+    <title>Book an Appointment</title>
+    <link rel="shortcut icon" href="https://cdn.jotfor.ms/assets/img/favicons/favicon-2021-light%402x.png">
+    <link rel="stylesheet" href="https://cdn03.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=3.3.59850"/>
+    <link rel="stylesheet" href="https://cdn01.jotfor.ms/css/styles/payment/payment_styles.css?3.3.59850" />
+    <link rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_feature.css?3.3.59850" />
+    <style type="text/css">
+        /* Injected CSS Code */
+        .supernova { background-color: #12121c; }
+        .supernova .form-all { background-color: #60626c; color: #ffffff; }
+        .form-all { max-width: 752px; width: 100%; font-size: 16px }
+        .form-header-group .form-header { color: #ffffff; }
+        .form-input-wide { margin-bottom: 12px; }
+        .form-input-wide input, .form-input-wide select { width: 100%; }
+
+        /* Style improvements for the form fields */
+        .form-textbox { background-color: #e3e3e3; padding: 8px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="static/images/HealthcareLogo.png" alt="Healthcare Logo" height="100">
+            </a>
+            <div class="d-flex">
+                <a href="{{ url_for('home') }}" class="btn btn-custom mx-2">Home</a>
+                <a href="{{ url_for('register') }}" class="btn btn-custom mx-2">Register</a>
+                <a href="{{ url_for('login') }}" class="btn btn-custom mx-2">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Appointment Form -->
+    <div role="main" class="form-all">
+        <form action="https://form.jotform.com/232504259003042" method="post" name="form_232504259003042" id="232504259003042" accept-charset="utf-8" autocomplete="on">
+            <input type="hidden" name="formID" value="232504259003042" />
+            <input type="hidden" id="JWTContainer" value="" />
+            <input type="hidden" id="cardinalOrderNumber" value="" />
+            <input type="hidden" id="jsExecutionTracker" name="jsExecutionTracker" value="build-date-1735425164219" />
+            
+            <div class="form-header-group header-large">
+                <div class="header-text httac htvam">
+                    <h1 id="header_1" class="form-header" data-component="header">Book an Appointment</h1>
+                </div>
+            </div>
+
+            <!-- Name Fields -->
+            <div class="form-line jf-required" data-type="control_fullname" id="id_5">
+                <label class="form-label form-label-top form-label-auto" id="label_5" for="first_5" aria-hidden="false"> Your Name : <span class="form-required">*</span> </label>
+                <div id="cid_5" class="form-input-wide jf-required" data-layout="full">
+                    <input type="text" id="first_5" name="q5_yourName[first]" class="form-textbox validate[required]" required="" placeholder="First Name" />
+                    <input type="text" id="last_5" name="q5_yourName[last]" class="form-textbox validate[required]" required="" placeholder="Last Name" />
+                </div>
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-line jf-required" data-type="control_email" id="id_7">
+                <label class="form-label form-label-top form-label-auto" id="label_7" for="input_7" aria-hidden="false"> Enter your Email : <span class="form-required">*</span> </label>
+                <div id="cid_7" class="form-input-wide jf-required" data-layout="half">
+                    <input type="email" id="input_7" name="q7_enterYour" class="form-textbox validate[required, Email]" required="" placeholder="example@example.com" />
+                </div>
+            </div>
+
+            <!-- Phone Number Fields -->
+            <div class="form-line jf-required" data-type="control_phone" id="id_6">
+                <label class="form-label form-label-top form-label-auto" id="label_6" for="input_6_area" aria-hidden="false"> Phone Number : <span class="form-required">*</span> </label>
+                <div id="cid_6" class="form-input-wide jf-required" data-layout="half">
+                    <input type="tel" id="input_6_area" name="q6_phoneNumber[area]" class="form-textbox validate[required]" required="" placeholder="Area Code" />
+                    <input type="tel" id="input_6_phone" name="q6_phoneNumber[phone]" class="form-textbox validate[required]" required="" placeholder="Phone Number" />
+                </div>
+            </div>
+
+            <!-- Appointment Date Field -->
+            <div class="form-line jf-required" data-type="control_appointment" id="id_4">
+                <label class="form-label form-label-top" id="label_4" for="input_4" aria-hidden="false"> Book an Appointment </label>
+                <div id="cid_4" class="form-input-wide" data-layout="full">
+                    <input type="date" id="input_4_date" name="q4_bookAn[date]" class="form-textbox validate[required]" required="" />
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-line" data-type="control_button" id="id_2">
+                <div id="cid_2" class="form-input-wide" data-layout="full">
+                    <button id="input_2" type="submit" class="form-submit-button submit-button">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Voice Assistant and Live Chat Buttons -->
+    <div class="button-container">
+        <button class="btn btn-custom" id="voiceAssistantBtn">Voice Assistant</button>
+        <button class="btn btn-custom" id="liveChatBtn">Live Chat</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <p>&copy; 2024 Healthcare System. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Voice Recognition and Live Chat -->
+    <script>
+        document.getElementById('voiceAssistantBtn').addEventListener('click', function() {
+            console.log("Voice Assistant button clicked!");
+            startListening();
+        });
+
+        function startListening() {
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            if (!recognition) {
+                alert("Speech Recognition is not supported in your browser.");
+                return;
+            }
+            recognition.lang = 'en-US';
+            recognition.start();
+
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript;
+                console.log('You said:', transcript);
+                fetch('/voice_assistant_process', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ command: transcript })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert('Voice Command Processed: ' + data.status);
+                });
+            };
+        }
+    </script>
+</body>
+</html>

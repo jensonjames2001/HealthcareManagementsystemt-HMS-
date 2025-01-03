@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare System - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='chatbot.css') }}" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='images/HealthcareLogo.png') }}" alt="Healthcare Logo" height="100">
+            </a>
+            <div class="d-flex">
+                <a href="{{ url_for('usefulLinks') }}" class="btn btn-custom mx-2">Useful Links</a>
+                
+                <!-- Services Dropdown Menu -->
+                <div class="dropdown">
+                    <a href="#" class="btn btn-custom mx-2 dropdown-toggle" id="servicesDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        Services
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                        <li><a href="https://form.jotform.com/232504259003042" class="dropdown-item">Book an Appointment</a></li>
+                        <li><a href="https://form.jotform.com/232224204562041" class="dropdown-item">Report a Health Issue</a></li>
+                        <li><a href="https://form.jotform.com/243413344815352" class="dropdown-item">Repeat a Prescription</a></li>
+                    </ul>
+                </div>
+
+                <a href="{{ url_for('register') }}" class="btn btn-custom mx-2">Register</a>
+                <a href="{{ url_for('login') }}" class="btn btn-custom mx-2">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Banner -->
+    <header class="banner text-center"></header>
+    
+    <!-- Voice Assistant Button -->
+    <div class="button-container">
+        <button class="btn btn-custom" id="voiceAssistantBtn">Voice Assistant</button>
+        <!-- Live Chat button -->
+        <button class="btn btn-custom" id="liveChatBtn">Live Chat</button> 
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <p>&copy; 2024 Healthcare System. All rights reserved.</p>
+    </footer>
+
+    <!-- Chatbot Popup -->
+    <div class="chatbot-popup" id="chatbot-popup" style="display:none;">
+        <div class="chat-header">
+            <span>Live Chat | <a href="https://healthcaresys2024.ew.r.appspot.com/" target="_blank">Ask your query</a></span>
+            <button id="close-btn">&times;</button>
+        </div>
+        <div class="chat-box" id="chat-box"></div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type a message...">
+            <button id="send-btn">Send</button>
+        </div>
+        <div class="copyright">
+            <a href="https://healthcaresys2024.ew.r.appspot.com/" target="_blank">Healthcare System 2024</a>
+        </div>
+    </div>
+
+    <!-- The path for chatbot script -->
+    <script src="{{ url_for('static', filename='chatbot.js') }}"></script>
+
+    <!-- JavaScript for Voice Recognition -->
+    <script>
+        document.getElementById('voiceAssistantBtn').addEventListener('click', function() {
+            console.log("Voice Assistant button clicked!");
+            startListening(); // Start listening for voice command
+        });
+
+        function startListening() {
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            if (!recognition) {
+                alert("Speech Recognition is not supported in your browser.");
+                return;
+            }
+            recognition.lang = 'en-US'; // Set the language
+            recognition.start(); // Start recognition process
+
+            recognition.onstart = function() {
+                console.log("Voice recognition started.");
+            };
+
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript;
+                console.log('You said:', transcript); // Log recognized command
+                fetch('https://healthcaresys2024.ew.r.appspot.com/voice_assistant_process', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ command: transcript })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Backend processed the command:', data);
+                    alert('Voice Command Processed: ' + data.status);
+                })
+                .catch(error => console.error('Error during voice command processing:', error));
+            };
+
+            recognition.onerror = function(event) {
+                console.error('Speech recognition error:', event.error);
+                alert('Error in voice recognition. Please try again.');
+            };
+        }
+    </script>
+
+    <!-- JavaScript for Chatbot Toggle -->
+    <script>
+        // Show the chatbot popup when the Live Chat button is clicked
+        document.getElementById('liveChatBtn').addEventListener('click', function() {
+            const chatbotPopup = document.getElementById('chatbot-popup');
+            // Toggle visibility of the chatbot
+            chatbotPopup.style.display = chatbotPopup.style.display === 'none' ? 'block' : 'none';
+        });
+
+        // Close the chatbot when the close button is clicked
+        document.getElementById('close-btn').addEventListener('click', function() {
+            const chatbotPopup = document.getElementById('chatbot-popup');
+            chatbotPopup.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
